@@ -1,0 +1,23 @@
+Input: char[] chars
+Output: char[] capitalizedChar
+
+Method:
+// the following function recursively loops through 
+function capitalize(char[] chars, start, end)
+    if start = end:
+        return []
+    else
+        firstChar = char[0]
+        rest = char[1 -> n]
+        capitalizedChar = charCapitalize(firstChar)
+        return capitalizedChar + capitalize(rest)
+    end if
+end function
+
+function charCapitalize(char)
+    if char is in lowercase letter
+        return the uppercase version of char
+    else
+        return char
+    end if
+end function

@@ -1,8 +1,8 @@
-public class IntListTester { //break up testers into tests into individual functions
+public class IntDoubleLinkedListTesters { //break up testers into tests into individual functions
 
     public static void testToString() {
         System.out.println(" ===== TESTING TOSTRING =====");
-        IntList list = new IntList();
+        IntDoubleLinkedList list = new IntDoubleLinkedList();
         System.out.println("Testing toString() method for empty list:");
         System.out.println("String Result \"" + list.toString() + "\"");
         System.out.println("Appending a");
@@ -15,7 +15,7 @@ public class IntListTester { //break up testers into tests into individual funct
 
     public static void testAppend() {
         System.out.println(" ===== TESTING APPEND =====");
-        IntList list = new IntList();
+        IntDoubleLinkedList list = new IntDoubleLinkedList();
         System.out.println("Testing append() method with one element:");
         System.out.println("Appending 6 to list");
         list.append(6);
@@ -27,7 +27,7 @@ public class IntListTester { //break up testers into tests into individual funct
     
     public static void testPrepend() {
         System.out.println(" ===== TESTING PREPEND =====");
-        IntList list = new IntList();
+        IntDoubleLinkedList list = new IntDoubleLinkedList();
         System.out.println("Testing prepend() method with one element:");
         System.out.println("Prepending 3 to list");
         list.prepend(3);
@@ -41,7 +41,7 @@ public class IntListTester { //break up testers into tests into individual funct
         System.out.println("==== Test selectionSortLinkedList() ====");
         
         // Create an unsorted linked list
-        IntList list = new IntList();
+        IntDoubleLinkedList list = new IntDoubleLinkedList();
         list.append(3);
         list.prepend(6);
         list.append(1);
@@ -57,7 +57,7 @@ public class IntListTester { //break up testers into tests into individual funct
     
     public static void testDeleteWithValue() {
         System.out.println(" ===== TESTING DELETEWITHVALUE =====");
-        IntList list = new IntList();
+        IntDoubleLinkedList list = new IntDoubleLinkedList();
         list.append(6);
         list.append(5);
         list.prepend(3);
@@ -69,6 +69,7 @@ public class IntListTester { //break up testers into tests into individual funct
         list.deleteWithValue(5);
         System.out.println("String Result: \"" + list.toString() + "\"");
     }
+    
     
     
     

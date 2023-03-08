@@ -1,7 +1,11 @@
-public class IntList{
+public class IntDoubleLinkedList{
 
     Node head;
 
+    /**
+     * Appends value to the list
+     * @param data value to be appended
+     */
     public void append(int data){
         if (head == null){
             head = new Node(data);
@@ -14,12 +18,20 @@ public class IntList{
         current.next = new Node(data);
     }
 
+    /**
+     * Adds value to beginning of list
+     * @param data value to be prepended
+     */
     public void prepend(int data){
         Node newHead = new Node(data);
         newHead.next = head;
         head = newHead;
     }
 
+    /**
+     * Deletes the first node found in the list that has the given value
+     * @param data value of node to be deleted
+     */
     public void deleteWithValue(int data){
         if (head == null) return;
 
@@ -33,6 +45,9 @@ public class IntList{
         }
     }
 
+    /**
+     * Converts list to visual string representation
+     */
     public String toString(){
         String listString = "";
         if (head==null) return "Empty list";
@@ -40,13 +55,17 @@ public class IntList{
         listString += head.toString();
         Node current = head;
         while(current.next != null){
-            listString += " -> " + current.next.toString();
+            listString += " <-> " + current.next.toString();
             current = current.next;
         }
 
         return listString;
     }
 
+    /**
+     * Checks if list is empty
+     * @return T/F 
+     */
     public boolean isEmpty(){
         if (head == null){
             return true;
@@ -151,6 +170,23 @@ public class IntList{
         int temp = a.data;
         a.data = b.data;
         b.data = temp;
+    }
+
+    public IntDoubleLinkedList deleteFirst(){
+        if (this.isEmpty()){
+            System.out.println("List is empty");
+            return this;
+        }
+        head = head.next;
+        return this;
+    }
+
+    public int getFirst(){
+        if (this.isEmpty()){
+            System.out.println("List is empty");
+            return -1;
+        }
+        return head.data;
     }
 
 
