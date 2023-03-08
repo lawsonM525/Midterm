@@ -70,6 +70,29 @@ public class IntLinkedListTesters { //break up testers into tests into individua
         System.out.println("String Result: \"" + list.toString() + "\"");
     }
 
+    public static void testDeleteFirst() {
+        System.out.println(" ===== TESTING DELETEFIRST =====");
+        IntLinkedList list = new IntLinkedList();
+        list.append(6);
+        list.append(5);
+        list.prepend(3);
+        System.out.println("List: \"" + list.toString() + "\"");
+        System.out.println("Deleting first from list");
+        list.deleteFirst();
+        System.out.println("String Result: \"" + list.toString() + "\"");
+    }
+
+    public static void testGetFirst() {
+        System.out.println(" ===== TESTING GETFIRST =====");
+        IntLinkedList list = new IntLinkedList();
+        list.append(6);
+        list.append(5);
+        list.prepend(3);
+        System.out.println("List: \"" + list.toString() + "\"");
+        System.out.println("Getting first from list");
+        System.out.println(list.getFirst());
+    }
+
     
     
     

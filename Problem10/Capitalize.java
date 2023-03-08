@@ -12,8 +12,8 @@ public class Capitalize {
     }
 
     public static char charCapitalize(char character) {
-        if (character.isLowerCase(character)) {
-            return character.toUpperCase(character);
+        if (character.isLowerCase) {
+            return character.toUpperCase;
         } else {
             return character;
         }
