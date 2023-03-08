@@ -1,22 +1,44 @@
 public class Capitalize {
     
-    public static String capitalize(char[] string, start, end) {
-        if (string.isEmpty()) {
-            return string;
+    /**
+     * Capitalizes all characters in an array of characters in place.
+     * @param string array of characters to be capitalized
+     * @param start 
+     * @param end 
+     */
+    public static void capitalize(char[] string, int start, int end) {
+        if (start==end) {
+            return;
         } else {
-            char firstChar = string[0];
-            String restOfString = string[1:n];
+            char firstChar = string[start];
             char capitalizedChar = charCapitalize(firstChar);
-            return addArrays(capitalizedChar,capitalize(string, start+1, end));
+            string[start] = capitalizedChar;
+            capitalize(string, start+1, end);
+            return;
         }
     }
 
+    /**
+     * Wrapper for above recursive function.
+     * @param string array of characters to be capitalized
+     */
+    public static void capitalize(char[] string) {
+        capitalize(string, 0, string.length);
+        return;
+    }
+
+    /**
+     * Capitalizes a character if it is a letter.
+     * @param character character to be capitalized
+     * @return capitalized character if it was loer case, otherwise the same character
+     */
     public static char charCapitalize(char character) {
-        if (character.isLowerCase) {
-            return character.toUpperCase;
+        if (character >= 'a' && character <= 'z') {
+            return (char) (character - 32);
         } else {
             return character;
         }
     }
+    //Methodology inspired by: http://www.cs.trincoll.edu/~crypto/cryptogrammer/CryptoGram.java
     
 }
