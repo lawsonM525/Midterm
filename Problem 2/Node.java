@@ -1,9 +1,8 @@
 public class Node {
-    
+    //make class variables private and implement getters and setters
     Node next;
     int data;
 
-    // Constructor
     public Node(int data){
         this.data = data;
     }
