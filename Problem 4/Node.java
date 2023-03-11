@@ -1,5 +1,5 @@
 public class Node {
-    //TODO: make class variables private and implement getters and setters
+    
     Node next; //pointer to next node
     Node previous; //pointer to previous node in DLL
     int data;
