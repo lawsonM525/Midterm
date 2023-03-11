@@ -6,11 +6,11 @@ public class Capitalize {
      * @param start 
      * @param end 
      */
-    public static void capitalize(char[] string, int start, int end) {
+    public static void capitalize(CharLinkedList string, int start, int end) {
         if (start==end) {
             return;
         } else {
-            char firstChar = string[start];
+            char firstChar = string.head.data;
             char capitalizedChar = charCapitalize(firstChar);
             string[start] = capitalizedChar;
             capitalize(string, start+1, end);
@@ -22,7 +22,7 @@ public class Capitalize {
      * Wrapper for above recursive function.
      * @param string array of characters to be capitalized
      */
-    public static void capitalize(char[] string) {
+    public static void capitalize(CharLinkedList string) {
         capitalize(string, 0, string.length);
         return;
     }
