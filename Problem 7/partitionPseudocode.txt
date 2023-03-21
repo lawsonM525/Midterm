@@ -1,0 +1,31 @@
+Input: intList seq; int x; int whichOutput
+Output: intList output
+
+Method:
+//the following pseudocode computes three lists left, middle, and right, and outputs the one the user wants
+partition(seq, x, whichOutput):
+    declare new list left
+    declare new list middle
+    declare new list right 
+
+    //adding values to lists
+    loop i from 0 to seq.length: //looping through the list
+        if seq[i] > x:
+            add seq[i] to right //append value to right list if value greater than x
+        else if seq[i] < x:
+            add seq[i] to left //append value to left list if value smaller than x
+        else:
+            add seq[i] to middle //append value to middle list if value equal to x
+        end if
+    end loop
+
+    //outputting chosen list
+    if whichOutput == 1:   //1 signifies left
+        return left
+    if whichOutput == 2:   //2 signifies middle
+        return middle
+    if whichOutput == 3: //3 signifies right
+        return right
+    //if whichOutput was out of range 1 to 3
+    print"Invalid Output"
+    return empty list
