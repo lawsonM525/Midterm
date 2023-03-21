@@ -6,24 +6,23 @@ public class Capitalize {
      * @param start 
      * @param end 
      */
-    public static void capitalize(CharLinkedList string, int start, int end) {
-        if (start==end) {
-            return;
-        } else {
-            char firstChar = string.head.data;
-            char capitalizedChar = charCapitalize(firstChar);
-            string[start] = capitalizedChar;
-            capitalize(string, start+1, end);
+    public static void capitalize(CharLinkedList string, Node current) {
+        if (current == null) {
             return;
         }
+        char temp = charCapitalize(current.data);
+        current.data = temp;
+        capitalize(string, current.next);
+        return;
     }
+        
 
     /**
      * Wrapper for above recursive function.
      * @param string array of characters to be capitalized
      */
     public static void capitalize(CharLinkedList string) {
-        capitalize(string, 0, string.length);
+        capitalize(string, string.head);
         return;
     }
 
