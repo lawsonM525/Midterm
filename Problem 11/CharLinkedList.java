@@ -62,10 +62,10 @@ public class CharLinkedList {
      * Returns data of first node in list
      * @return data of first node
      */    
-    public int getFirst(){
+    public char getFirst(){
         if (this.isEmpty()){
             System.out.println("List is empty");
-            return -1;
+            return ' ';
         }
         return head.data;
     }

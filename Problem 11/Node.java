@@ -1,10 +1,10 @@
 public class Node {
     
     Node next;
-    int data;
+    char data;
 
     // Constructor
-    public Node(int data){
+    public Node(char data){
         this.data = data;
     }
 
