@@ -1,14 +1,13 @@
 public class IntStack {
     // Class member variables
-    private IntLinkedList stack;
-    private Node top;
+    public IntLinkedList stack;
+    // top variable unnecessary since we have a head variable in the linkedlist
     //private int size;
     //Stack has no size since it is a linkedlist
 
     // Constructor
     public IntStack() {
-        Node top = null;// top is the last node in the stack
-        IntLinkedList stack = new IntLinkedList();
+        stack = new IntLinkedList();
     }
 
     // Methods
@@ -17,7 +16,7 @@ public class IntStack {
      * @return true if the stack is empty, false otherwise
      */
     public boolean isEmpty() {
-        return (top == null);
+        return (stack.isEmpty());
     }
 
     /**
@@ -29,7 +28,7 @@ public class IntStack {
             System.out.println("Stack is empty");
             return -1;
         } else {
-            return top.data;
+            return stack.getFirst();
         }
     }
 
@@ -39,8 +38,7 @@ public class IntStack {
      */
     public void push(int i) {
         Node newNode = new Node(i);
-        stack.prepend(newNode);
-        top = newNode;
+        stack.prepend(newNode.data);
     }
 
     /**
@@ -52,9 +50,8 @@ public class IntStack {
             System.out.println("Stack is empty");
             return -1;
         } else {
-            int popped = top.data;
+            int popped = stack.getFirst();
             stack.deleteFirst();
-            top = stack.head;
             return popped;
         }
     }
@@ -65,14 +62,15 @@ public class IntStack {
      */
     public String toString() {
         String stackString = "";
-        if (top==null) return "Empty stack";
+        if (stack.isEmpty()) return "Empty stack";
 
-        stackString = top.toString();
-        Node current = top;
+        stackString = " " + stack.getFirst();
+        Node current = stack.head;
         while(current.next != null){
             stackString = current.next.toString()+ " -> " + stackString;//bottom to top
             current = current.next;
         }
+
 
         stackString = "Bottom -> " + stackString + " -> Top";
 
